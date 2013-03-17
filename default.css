@@ -185,7 +185,7 @@ input, textarea, select {
 #content {
 	float: left;
 	width: 590px;
-	border-right: 1px dashed #DFE1E0;
+	/*border-right: 1px dashed #DFE1E0;*/
 }
 
 /* Post */
@@ -331,6 +331,10 @@ input, textarea, select {
 	color: #EDEDED;
 }
 
+#like-wrap {
+    width: 880px;
+    margin: 0 auto;
+}
 /* Footer */
 #footer-wrap {
 }
