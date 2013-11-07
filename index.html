@@ -8,15 +8,31 @@
     <link href="default.css" rel="stylesheet" type="text/css" />
     <script src="js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript">
-        function onServices() {
-            $("#HomeContent").hide()
-            $("#Services").show()
-        }
-        function onHome() {
-            $("#Services").hide()
-            $("#HomeContent").show()
-        }
+		$(function() {
+			$("#menu a").click(function (){
+				var targetId = this.id.substring(0, this.id.indexOf('_link'));
+				$('.post').hide();
+				$('#'+targetId).show();
+			});
+		});
+
     </script>
+	<style type="text/css">
+		#sidebar {
+			font-size: 120%;
+		}
+		.company {
+			height: 100%;
+			float: left;
+		}
+		.phone {
+			height: 100%;
+			float: right;
+			padding: 50px 100px 0 5px;
+			font: 12px Arial, Helvetica, sans-serif;
+			color: #28313A;
+		}
+	</style>
 </head>
 
 <body>
@@ -24,13 +40,19 @@
 <!-- start header -->
 <div id="header">
 	<div id="logo">
-		<h1>Джокер</h1>
-		<h2>Агентство детективов</h2>
+		<div class="company">
+			<h1>Джокер</h1>
+			<h2>Агентство детективов</h2>
+		</div>
+		<div class="phone">
+			+7 (925) 153-49-75
+		</div>
 	</div>
 	<div id="menu">
 		<ul>
-			<li class="current_page_item"><a href="javascript:;" onclick="onHome()">Главная</a></li>
-            <li class="last"><a href="javascript:;" onclick="onServices()">Услуги</a></li>
+			<li><a id="home_link" href="javascript:;">Главная</a></li>
+            <li><a id="services_link" href="javascript:;">Услуги</a></li>
+            <li><a id="contacts_link" href="javascript:;">Контакты</a></li>
             <!--
             <li><a href="#">About</a></li>
             -->
@@ -43,17 +65,16 @@
 <div id="page">
 	<!-- start content -->
 	<div id="content">
-		<div id="HomeContent" class="post">
+		<div id="home" class="post">
 			<div class="entry">
                 <ul>
-                    <li>Круглосуточно</li>
                     <li>Разумные цены</li>
                     <li>Помощь физическим и юридическим лицам</li>
                     <li>Действующие лицензии на детективную деятельность на территории РФ и на территории стран Евросоюза</li>
                 </ul>
 			</div>
 		</div>
-        <div id="Services" class="post" style="display: none">
+        <div id="services" class="post" style="display: none">
             <div class="entry">
                 <ul>
                     <li>сбор сведений по физическим и юридическим лицам</li>
@@ -76,6 +97,14 @@
                 </ul>
             </div>
         </div>
+		<div id="contacts" class="post" style="display: none">
+			<div class="entry">
+				<ul>
+					<li><b>Тел.</b> +7 (925) 153-49-75</li>
+					<li><b>Email:</b> <a href="mailto:client@detective-joker.ru">detektivejoker@gmail.com</a></li>
+				</ul>
+			</div>
+		</div>
 	</div>
 	<!-- end content -->
 	<!-- start sidebar -->
@@ -84,13 +113,15 @@
             <li>
                 <img src="images/img06.jpg">
             </li>
+<!--
 			<li>
 				<h2>Контакты</h2>
 				<ul>
-					<li>Тел. +7 (925) 153-49-75</li>
-					<li>Email: <a href="mailto:client@detective-joker.ru">detektivejoker@gmail.com</a></li>
+					<li><b>Тел.</b> +7 (925) 153-49-75</li>
+					<li><b>Email:</b> <a href="mailto:client@detective-joker.ru">detektivejoker@gmail.com</a></li>
 				</ul>
 			</li>
+-->
 		</ul>
 	</div>
 	<!-- end sidebar -->
