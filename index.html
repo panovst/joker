@@ -13,9 +13,20 @@
 				var targetId = this.id.substring(0, this.id.indexOf('_link'));
 				$('.post').hide();
 				$('#'+targetId).show();
+				activateMenuItem($(this));
 			});
+			activateMenuItem($("#menu a:first"));
+
 		});
 
+		function activateMenuItem(item) {
+			var items = $("#menu a");
+			items.removeClass('active-menu-item');
+			items.removeClass('inactive-menu-item');
+			items.addClass('inactive-menu-item');
+			$(item).removeClass('inactive-menu-item');
+			$(item).addClass('active-menu-item');
+		}
     </script>
 	<style type="text/css">
 		#sidebar {
@@ -25,12 +36,27 @@
 			height: 100%;
 			float: left;
 		}
-		.phone {
+		.phone-container {
 			height: 100%;
 			float: right;
-			padding: 50px 100px 0 5px;
-			font: 12px Arial, Helvetica, sans-serif;
+			padding: 0 60px 0 0;
+		}
+		.phone {
+			padding: 40px 0 10px 25px;
+			font: 24px Arial, Helvetica, sans-serif;
 			color: #28313A;
+		}
+
+		.active-menu-item {
+			color:gold;
+		}
+
+		.active-menu-item:hover{
+			color:gold;
+		}
+
+		.inactive-menu-item {
+			color: white;
 		}
 	</style>
 </head>
@@ -44,8 +70,8 @@
 			<h1>Джокер</h1>
 			<h2>Агентство детективов</h2>
 		</div>
-		<div class="phone">
-			+7 (925) 153-49-75
+		<div class="phone-container">
+			<div class="phone">+7 (925) 153-49-75</div>
 		</div>
 	</div>
 	<div id="menu">
@@ -100,7 +126,10 @@
 		<div id="contacts" class="post" style="display: none">
 			<div class="entry">
 				<ul>
+					<li><b>Адрес:</b> ????</li>
+					<li><b>Карта</b> ????</li>
 					<li><b>Тел.</b> +7 (925) 153-49-75</li>
+					<li><b>График работы</b> ????</li>
 					<li><b>Email:</b> <a href="mailto:client@detective-joker.ru">detektivejoker@gmail.com</a></li>
 				</ul>
 			</div>
@@ -113,15 +142,6 @@
             <li>
                 <img src="images/img06.jpg">
             </li>
-<!--
-			<li>
-				<h2>Контакты</h2>
-				<ul>
-					<li><b>Тел.</b> +7 (925) 153-49-75</li>
-					<li><b>Email:</b> <a href="mailto:client@detective-joker.ru">detektivejoker@gmail.com</a></li>
-				</ul>
-			</li>
--->
 		</ul>
 	</div>
 	<!-- end sidebar -->

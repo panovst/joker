@@ -26,19 +26,6 @@ p, ul, ol {
 	list-style: none;
 }
 
-a {
-	color: #8A7645;
-}
-
-a:hover, a:active {
-	text-decoration: none;
-	color: #8A7645;
-}
-
-a:visited {
-	color: #8A7645;
-}
-
 img {
 	border: none;
 }
@@ -118,15 +105,6 @@ input, textarea, select {
 	text-decoration: none;
 	text-transform: uppercase;
 	font-size: 11px;
-	color: #FFFFFF;
-}
-
-#menu a:hover { 
-	color: #FFFFFF;
-}
-
-#menu .current_page_item a {
-	color: #FFFFFF;
 }
 
 /** LOGO */
@@ -325,10 +303,6 @@ input, textarea, select {
 	margin: 0;
 	padding: 0;
 	list-style: none;
-}
-
-.box2 a:link, .box2 a:hover, .box2 a:active, .box2 a:visited  {
-	color: #EDEDED;
 }
 
 #like-wrap {
